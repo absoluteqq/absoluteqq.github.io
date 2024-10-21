@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.block {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .block {
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Стиль кнопки переключения темы */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    z-index: 1000; /* Устанавливаем кнопку на передний план */
+}
+.theme-toggle img {
+    width: 40px;
+    height: 40px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    font-size: 20px; /* Это значение управляет размером текста и иконок */
+    margin-bottom: 10px;
+}
+
+/* Настройка размера иконок */
+.skills-list .icon {
+    width: 1.2em; /* Размер иконки будет равен примерно 120% размера текста */
+    height: auto; /* Сохранение пропорций иконки */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-list li {
+        font-size: 18px; /* Можно уменьшить размер текста на мобильных устройствах */
+    }
+}
+/* Стиль для блока с фото */
+.photo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Круглая форма фото */
+    object-fit: cover; /* Обрезка изображения по границам */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для фото */
+    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.photo-container:hover .profile-photo {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
